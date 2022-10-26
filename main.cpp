@@ -4,10 +4,7 @@
 
 using namespace std;
 
-void info()
-{
-	cout << "Все объекты задаются основной латиницей, пробелы - нижнее подчёркивание." << endl;
-}
+void info() { cout << "Все объекты задаются основной латиницей, пробелы - нижнее подчёркивание." << endl; }
 void menu()
 {
 	cout << endl;
@@ -77,18 +74,23 @@ int main()
 					else cout << "Пусто!" << endl;
 					break;
 				case '3':
+					i = a.size();
+					cout << "Выберите элемент для редактирования: ";
 					cin >> j;
-					hero[j].edit();
+					if (j >= i)	hero[j].edit();
+					else cout << "Данного бъекта не существует!" << endl;
 					break;
 				case '4':
+					i = a.size();
+					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					hero[j].get();
+					if (j >= i) hero[j].get();
+					else cout << "Данного бъекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
 				}
 			}
-			o = 1; break;
-			system("cls");
+			o = 1; system("cls"); break;
 		case '2':
 			menu();
 			while (o == 1)
@@ -124,18 +126,23 @@ int main()
 					else cout << "Пусто!" << endl;
 					break;
 				case '3':
+					i = b.size();
+					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					enemy[j].edit();
+					if (j >= i) enemy[j].edit();
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
+					i = b.size();
+					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					enemy[j].get();
+					if (j >= i) enemy[j].get();
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
 				}
 			}
-			o = 1; break;
-			system("cls");
+			o = 1; system("cls"); break;
 		case '3':
 			menu();
 			while (o == 1)
@@ -171,18 +178,23 @@ int main()
 					else cout << "Пусто!" << endl;
 					break;
 				case '3':
+					i = c.size();
+					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					enemy[j].edit();
+					if (j >= i) monster[j].edit();
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
+					i = c.size();
+					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					enemy[j].get();
+					if (j >= i) monster[j].get();
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
 				}
 			}
-			o = 1; break;
-			system("cls");
+			o = 1; system("cls"); break;
 		case '4':
 			i = a.size();
 			if (i > 0)
