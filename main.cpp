@@ -56,6 +56,7 @@ int main()
 					for (j = 0; j < i + 1; j++)
 						hero[j] = rf[j];
 					a.setsize(i + 1);
+					cout << "Успешно добавлено!" << endl;
 					break;
 				case '2':
 					i = a.size();
@@ -70,6 +71,7 @@ int main()
 							hero[j] = rf[j];
 						delete[] rf;
 						a.setsize(i - 1);
+						cout << "Успешно удалено!" << endl;
 					}
 					else cout << "Пусто!" << endl;
 					break;
@@ -78,14 +80,14 @@ int main()
 					cout << "Выберите элемент для редактирования: ";
 					cin >> j;
 					if (j >= i)	hero[j].edit();
-					else cout << "Данного бъекта не существует!" << endl;
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
 					i = a.size();
 					cout << "Выберите элемент для вывода: ";
 					cin >> j;
 					if (j >= i) hero[j].get();
-					else cout << "Данного бъекта не существует!" << endl;
+					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
 				}
@@ -108,6 +110,7 @@ int main()
 					for (j = 0; j < i + 1; j++)
 						enemy[j] = re[j];
 					b.setsize(i + 1);
+					cout << "Успешно добавлено!" << endl;
 					break;
 				case '2':
 					i = b.size();
@@ -122,6 +125,7 @@ int main()
 							enemy[j] = re[j];
 						delete[] re;
 						b.setsize(i - 1);
+						cout << "Успешно удалено!" << endl;
 					}
 					else cout << "Пусто!" << endl;
 					break;
@@ -160,6 +164,7 @@ int main()
 					for (j = 0; j < i + 1; j++)
 						monster[j] = rm[j];
 					c.setsize(i + 1);
+					cout << "Успешно добавлено!" << endl;
 					break;
 				case '2':
 					i = c.size();
@@ -174,6 +179,7 @@ int main()
 							monster[j] = rm[j];
 						delete[] rm;
 						c.setsize(i - 1);
+						cout << "Успешно удалено!" << endl;
 					}
 					else cout << "Пусто!" << endl;
 					break;
