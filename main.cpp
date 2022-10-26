@@ -79,14 +79,14 @@ int main()
 					i = a.size();
 					cout << "Выберите элемент для редактирования: ";
 					cin >> j;
-					if (j >= i)	hero[j].edit();
+					if (j < i)	hero[j].edit();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
 					i = a.size();
 					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					if (j >= i) hero[j].get();
+					if (j < i) hero[j].get();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
@@ -131,16 +131,16 @@ int main()
 					break;
 				case '3':
 					i = b.size();
-					cout << "Выберите элемент для вывода: ";
+					cout << "Выберите элемент для изменения: ";
 					cin >> j;
-					if (j >= i) enemy[j].edit();
+					if (j < i) enemy[j].edit();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
 					i = b.size();
 					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					if (j >= i) enemy[j].get();
+					if (j < i) enemy[j].get();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
@@ -187,14 +187,14 @@ int main()
 					i = c.size();
 					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					if (j >= i) monster[j].edit();
+					if (j < i) monster[j].edit();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '4':
 					i = c.size();
 					cout << "Выберите элемент для вывода: ";
 					cin >> j;
-					if (j >= i) monster[j].get();
+					if (j < i) monster[j].get();
 					else cout << "Данного объекта не существует!" << endl;
 					break;
 				case '0': o = 0; break;
@@ -214,18 +214,18 @@ int main()
 			i = b.size();
 			if (i > 0)
 			{
-				cout << "Список героев: " << endl;
+				cout << "Список злодеев: " << endl;
 				for (j = 0; j < i; j++)
-					hero[j].get();
+					enemy[j].get();
 				cout << endl;
 			}
 			else cout << "Пусто!" << endl << endl;
 			i = c.size();
 			if (i > 0)
 			{
-				cout << "Список героев: " << endl;
+				cout << "Список монстров: " << endl;
 				for (j = 0; j < i; j++)
-					hero[j].get();
+					monster[j].get();
 				cout << endl;
 			}
 			else cout << "Пусто!" << endl << endl;
