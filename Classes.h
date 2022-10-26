@@ -9,6 +9,7 @@ public:
 	string name; //Имя
 	string weapon; //Оружие
 	string xp; //Навыки
+	int n = 0;
 };
 
 class Friends : public Heroes
@@ -24,6 +25,9 @@ public:
 	}
 	~Friends() { }
 	
+	int size() { return n; }
+	void setsize(int s) { n = s; }
+
 	void get()
 	{
 		cout << "Имя: " << name << endl;
@@ -31,7 +35,7 @@ public:
 		cout << "Навыки: " << xp << endl;
 	}
 	
-	void put(string h, string w, string x)
+	void set(string h, string w, string x)
 	{
 		name = h;
 		weapon = w;
@@ -40,6 +44,7 @@ public:
 
 	void add()
 	{
+		n++;
 		string h, w, x;
 		cout << "Имя: ";
 		cin >> h;
@@ -47,7 +52,19 @@ public:
 		cin >> w;
 		cout << "Навыки: ";
 		cin >> x;
-		put(h, w, x);
+		set(h, w, x);
+	}
+
+	void edit()
+	{
+		string h, w, x;
+		cout << "Имя: ";
+		cin >> h;
+		cout << "Оружие: ";
+		cin >> w;
+		cout << "Навыки: ";
+		cin >> x;
+		set(h, w, x);
 	}
 
 };
@@ -69,6 +86,9 @@ public:
 	}
 	~Enemies() { }
 	
+	int size() { return n; }
+	void setsize(int s) { n = s; }
+
 	void get()
 	{
 		cout << "Имя: " << name << endl;
@@ -78,7 +98,7 @@ public:
 		cout << "Навыки: " << xp << endl;
 	}
 
-	void put(string n, string w, string c, string h, string x)
+	void set(string n, string w, string c, string h, string x)
 	{
 		name = n;
 		weapon = w;
@@ -95,7 +115,7 @@ public:
 		cout << "Преступление: "; cin >> c;
 		cout << "Локация: "; cin >> h;
 		cout << "Навыки: "; cin >> x;
-		put(h, w, c, h, x);
+		set(h, w, c, h, x);
 	}
 };
 
@@ -112,13 +132,16 @@ public:
 	}
 	~Monsters() { }
 
+	int size() { return n; }
+	void setsize(int s) { n = s; }
+
 	void get()
 	{
 		cout << "Имя: " << name << endl;
 		cout << "Описание: " << desc << endl;
 	}
 
-	void put(string n, string d)
+	void set(string n, string d)
 	{
 		name = n;
 		desc = d;
@@ -129,6 +152,6 @@ public:
 		string n, d;
 		cout << "Имя: "; cin >> n;
 		cout << "Описание: "; cin >> d;
-		put(n, d);
+		set(n, d);
 	}
 };
