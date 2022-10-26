@@ -3,10 +3,6 @@
 
 using namespace std;
 
-void cwop() { cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!" << endl << endl; }
-void cwp() { cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITH PARAMETRES WAS CALLED!" << endl << endl; }
-void cc() {	cout << "SYSTEM MESSAGE!" << endl << "COPYING CONSTRUCTOR WAS CALLED!" << endl << endl; }
-void dest() { cout << "SYSTEM MESSAGE!" << endl << "DESTRUCTOR WAS CALLED!" << endl << endl; }
 class Heroes
 {
 public:
@@ -20,16 +16,16 @@ class Friends : public Heroes
 {
 	//name, weapon, xp
 public:
-	Friends() { cwop(); }
+	Friends() { cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!" << endl << endl; }
 	Friends(string name, string weapon)
 	{
 		this->name = name;
 		this->weapon = weapon;
 		this->xp = xp;
-		cwp();
+		cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITH PARAMETRES WAS CALLED!" << endl << endl;
 	}
-	Friends(const Friends& obj) { cc(); }
-	~Friends() { dest(); }
+	Friends(const Friends& obj) { cout << "SYSTEM MESSAGE!" << endl << "COPYING CONSTRUCTOR WAS CALLED!" << endl << endl; }
+	~Friends() { cout << "SYSTEM MESSAGE!" << endl << "DESTRUCTOR WAS CALLED!" << endl << endl; }
 	
 	int size();
 	void setsize(int s);
@@ -46,7 +42,7 @@ class Enemies : public Heroes
 	string home;
 	//name, weapon, xp
 public:
-	Enemies() { cwop(); }
+	Enemies() { cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!" << endl << endl; }
 	Enemies(string name, string weapon, string crime, string home, string xp)
 	{
 		this->name = name;
@@ -54,10 +50,10 @@ public:
 		this->crime = crime;
 		this->home = home;
 		this->xp = xp;
-		cwp();
+		cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITH PARAMETRES WAS CALLED!" << endl << endl;
 	}
-	Enemies(const Enemies& obj) { cc(); }
-	~Enemies() { dest(); }
+	Enemies(const Enemies& obj) { cout << "SYSTEM MESSAGE!" << endl << "COPYING CONSTRUCTOR WAS CALLED!" << endl << endl; }
+	~Enemies() { cout << "SYSTEM MESSAGE!" << endl << "DESTRUCTOR WAS CALLED!" << endl << endl; }
 	
 	int size();
 	void setsize(int s);
@@ -72,15 +68,15 @@ class Monsters : public Heroes
 	string desc;
 	//name
 public:
-	Monsters() { cwop(); }
+	Monsters() { cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!" << endl << endl; }
 	Monsters(string name, string desc)
 	{
 		this->name = name;
 		this->desc = desc;
-		cwp();
+		cout << "SYSTEM MESSAGE!" << endl << "CONSTRUCTOR WITH PARAMETRES WAS CALLED!" << endl << endl;
 	}
-	Monsters(const Monsters& obj) { cc(); }
-	~Monsters() { dest(); }
+	Monsters(const Monsters& obj) { cout << "SYSTEM MESSAGE!" << endl << "COPYING CONSTRUCTOR WAS CALLED!" << endl << endl; }
+	~Monsters() { cout << "SYSTEM MESSAGE!" << endl << "DESTRUCTOR WAS CALLED!" << endl << endl; }
 
 	int size();
 	void setsize(int s);
