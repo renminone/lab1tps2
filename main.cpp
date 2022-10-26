@@ -23,8 +23,10 @@ int main()
 	Monsters c;
 	Friends* hero = new Friends[0];
 	Friends* rf;
-	Enemies enemy[2];
-	Monsters monster[2];
+	Enemies* enemy = new Enemies[0];
+	Enemies* re;
+	Monsters* monster = new Monsters[0];
+	Monsters* rm;
 
 	while (l == 1)
 	{
@@ -55,7 +57,6 @@ int main()
 					break;
 				case '2':
 					i = a.size();
-					cout << i;
 					if (i > 0)
 					{
 						rf = new Friends[i - 1];
@@ -84,13 +85,99 @@ int main()
 			o = 1; break;
 			system("cls");
 		case '2':
-			for (i = 0; i < 2; i++)
-				enemy[i].add();
-			break;
+			menu();
+			while (o == 1)
+			{
+				switch (_getch())
+				{
+				case '1':
+					i = b.size();
+					re = new Enemies[i + 1];
+					for (j = 0; j < i; j++)
+						re[j] = enemy[j];
+					re[i].add();
+					delete[] enemy;
+					enemy = new Enemies[i + 1];
+					for (j = 0; j < i + 1; j++)
+						enemy[j] = re[j];
+					b.setsize(i + 1);
+					break;
+				case '2':
+					i = b.size();
+					if (i > 0)
+					{
+						re = new Enemies[i - 1];
+						for (j = 0; j < i - 1; j++)
+							re[j] = enemy[j];
+						delete[] enemy;
+						enemy = new Enemies[i - 1];
+						for (j = 0; j < i - 1; j++)
+							enemy[j] = re[j];
+						delete[] re;
+						b.setsize(i - 1);
+					}
+					else cout << "Пусто!" << endl;
+					break;
+				case '3':
+					cin >> j;
+					enemy[j].edit();
+					break;
+				case '4':
+					cin >> j;
+					enemy[j].get();
+					break;
+				case '0': o = 0; break;
+				}
+			}
+			o = 1; break;
+			system("cls");
 		case '3':
-			for (i = 0; i < 2; i++)
-				monster[i].add();
-			break;
+			menu();
+			while (o == 1)
+			{
+				switch (_getch())
+				{
+				case '1':
+					i = c.size();
+					rm = new Monsters[i + 1];
+					for (j = 0; j < i; j++)
+						rm[j] = monster[j];
+					rm[i].add();
+					delete[] monster;
+					monster = new Monsters[i + 1];
+					for (j = 0; j < i + 1; j++)
+						monster[j] = rm[j];
+					c.setsize(i + 1);
+					break;
+				case '2':
+					i = c.size();
+					if (i > 0)
+					{
+						rm = new Monsters[i - 1];
+						for (j = 0; j < i - 1; j++)
+							rm[j] = monster[j];
+						delete[] monster;
+						monster = new Monsters[i - 1];
+						for (j = 0; j < i - 1; j++)
+							monster[j] = rm[j];
+						delete[] rm;
+						c.setsize(i - 1);
+					}
+					else cout << "Пусто!" << endl;
+					break;
+				case '3':
+					cin >> j;
+					enemy[j].edit();
+					break;
+				case '4':
+					cin >> j;
+					enemy[j].get();
+					break;
+				case '0': o = 0; break;
+				}
+			}
+			o = 1; break;
+			system("cls");
 		case '4':
 			i = a.size();
 			if (i > 0)
@@ -109,6 +196,7 @@ int main()
 					hero[j].get();
 				cout << endl;
 			}
+			else cout << "Пусто!" << endl << endl;
 			i = c.size();
 			if (i > 0)
 			{
@@ -117,6 +205,7 @@ int main()
 					hero[j].get();
 				cout << endl;
 			}
+			else cout << "Пусто!" << endl << endl;
 			break;
 		case '0': l = 0; break;
 		}
