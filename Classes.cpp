@@ -56,29 +56,29 @@ void Enemies::set(string n, string w, string c, string h, string x)
 {
 	name = n;
 	weapon = w;
-	crime = x;
+	crime = c;
 	home = h;
 	xp = x;
 }
 void Enemies::add()
 {
 	string n, w, c, h, x;
-	cout << "Имя: "; cin >> h;
+	cout << "Имя: "; cin >> n;
 	cout << "Оружие: ";	cin >> w;
 	cout << "Преступление: "; cin >> c;
 	cout << "Локация: "; cin >> h;
 	cout << "Навыки: "; cin >> x;
-	set(h, w, c, h, x);
+	set(n, w, c, h, x);
 }
 void Enemies::edit()
 {
 	string n, w, c, h, x;
-	cout << "Имя: "; cin >> h;
+	cout << "Имя: "; cin >> n;
 	cout << "Оружие: ";	cin >> w;
 	cout << "Преступление: "; cin >> c;
 	cout << "Локация: "; cin >> h;
 	cout << "Навыки: "; cin >> x;
-	set(h, w, c, h, x);
+	set(n, w, c, h, x);
 }
 
 
