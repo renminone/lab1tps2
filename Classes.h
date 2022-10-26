@@ -14,6 +14,8 @@ public:
 	string weapon; //Оружие
 	string xp; //Навыки
 	int n = 0;
+	int size();
+	void setsize(int s);
 };
 
 class Friends : public Heroes
@@ -31,8 +33,6 @@ public:
 	Friends(const Friends& obj) { cc(); }
 	~Friends() { dest(); }
 	
-	int size();
-	void setsize(int s);
 	void get();
 	void set(string h, string w, string x);
 	void add();
@@ -82,8 +82,6 @@ public:
 	Monsters(const Monsters& obj) { cc(); }
 	~Monsters() { dest(); }
 
-	int size();
-	void setsize(int s);
 	void get();
 	void set(string n, string d);
 	void add();
