@@ -22,9 +22,32 @@ public:
 		this->weapon = weapon;
 		this->xp = xp;
 	}
-	~Friends()
+	~Friends() { }
+	
+	void get()
 	{
-		cout << "Очищено." << std::endl;
+		cout << "Имя: " << name << endl;
+		cout << "Оружие: " << weapon << endl;
+		cout << "Навыки: " << xp << endl;
+	}
+	
+	void put(string h, string w, string x)
+	{
+		name = h;
+		weapon = w;
+		xp = x;
+	}
+
+	void add()
+	{
+		string h, w, x;
+		cout << "Имя: ";
+		cin >> h;
+		cout << "Оружие: ";
+		cin >> w;
+		cout << "Навыки: ";
+		cin >> x;
+		put(h, w, x);
 	}
 
 };
@@ -44,11 +67,36 @@ public:
 		this->home = home;
 		this->xp = xp;
 	}
-	~Enemies()
-	{
-		cout << "Очищено." << std::endl;
-	}
+	~Enemies() { }
 	
+	void get()
+	{
+		cout << "Имя: " << name << endl;
+		cout << "Оружие: " << weapon << endl;
+		cout << "Преступление: " << crime << endl;
+		cout << "Локация: " << home << endl;
+		cout << "Навыки: " << xp << endl;
+	}
+
+	void put(string n, string w, string c, string h, string x)
+	{
+		name = n;
+		weapon = w;
+		crime = x;
+		home = h;
+		xp = x;
+	}
+
+	void add()
+	{
+		string n, w, c, h, x;
+		cout << "Имя: "; cin >> h;
+		cout << "Оружие: ";	cin >> w;
+		cout << "Преступление: "; cin >> c;
+		cout << "Локация: "; cin >> h;
+		cout << "Навыки: "; cin >> x;
+		put(h, w, c, h, x);
+	}
 };
 
 class Monsters : public Heroes
@@ -62,9 +110,25 @@ public:
 		this->name = name;
 		this->desc = desc;
 	}
-	~Monsters()
+	~Monsters() { }
+
+	void get()
 	{
-		cout << "Очищено." << std::endl;
+		cout << "Имя: " << name << endl;
+		cout << "Описание: " << desc << endl;
 	}
 
+	void put(string n, string d)
+	{
+		name = n;
+		desc = d;
+	}
+
+	void add()
+	{
+		string n, d;
+		cout << "Имя: "; cin >> n;
+		cout << "Описание: "; cin >> d;
+		put(n, d);
+	}
 };
