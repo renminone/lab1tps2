@@ -4,6 +4,10 @@
 
 using namespace std;
 
+void info()
+{
+	cout << "Все объекты задаются основной латиницей, пробелы - нижнее подчёркивание." << endl;
+}
 void menu()
 {
 	cout << endl;
@@ -11,6 +15,7 @@ void menu()
 	cout << "2 - Удаление." << endl;
 	cout << "3 - Изменение." << endl;
 	cout << "4 - Вывод элемента." << endl;
+	cout << "5 - Важная информация" << endl;
 	cout << "0 - выход в главное меню." << endl;
 }
 int main()
@@ -207,6 +212,7 @@ int main()
 			}
 			else cout << "Пусто!" << endl << endl;
 			break;
+		case '5': info();
 		case '0': l = 0; break;
 		}
 	}
