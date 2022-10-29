@@ -9,6 +9,7 @@ private:
 public:
 	Friends();
 	Friends(string name, string weapon, string xp);
+	Friends(const Friends &obj);
 	~Friends();
 
 	void set_name(string name);
