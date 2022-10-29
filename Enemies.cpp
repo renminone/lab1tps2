@@ -5,7 +5,7 @@ using namespace std;
 
 Enemies::Enemies()
 {
-	cout << "\nSYSTEM MESSAGE!\nMONSTERS CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!\n\n";
+	cout << "\nSYSTEM MESSAGE!\nENEMIES CONSTRUCTOR WITHOUT PARAMETRES WAS CALLED!\n\n";
 }
 
 Enemies::Enemies(string name, string weapon, string crime, string home, string xp)
@@ -15,7 +15,7 @@ Enemies::Enemies(string name, string weapon, string crime, string home, string x
 	this->crime = crime;
 	this->home = home;
 	this->xp = xp;
-	cout << "\nSYSTEM MESSAGE!\nMONSTERS CONSTRUCTOR WAS CALLED!\n\n";
+	cout << "\nSYSTEM MESSAGE!\nENEMIES CONSTRUCTOR WAS CALLED!\n\n";
 }
 
 Enemies::~Enemies()
@@ -55,7 +55,7 @@ std::istream& operator>> (std::istream& in, Enemies& enemies)
 	cout << "Имя: "; in >> enemies.name;
 	cout << "Оружие: "; in >> enemies.weapon;
 	cout << "Преступление: "; in >> enemies.crime;
-	cout << "Дворец: "; in >> enemies.home;
-	cout << ": "; in >> enemies.xp;
+	cout << "Локация: "; in >> enemies.home;
+	cout << "Навыки: "; in >> enemies.xp;
 	return in;
 }
