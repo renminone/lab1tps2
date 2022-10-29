@@ -18,6 +18,11 @@ Enemies::Enemies(string name, string weapon, string crime, string home, string x
 	cout << "\nSYSTEM MESSAGE!\nENEMIES CONSTRUCTOR WAS CALLED!\n\n";
 }
 
+Enemies(const Enemies &obj)
+{      
+    cout << "\nSYSTEM MESSAGE!\nENEMIES COPY CONSTRUCTOR WAS CALLED!\n\n";
+}
+
 Enemies::~Enemies()
 {
 	cout << "\nSYSTEM MESSAGE!\nENEMIES DESTRUCTOR WAS CALLED!\n\n";
