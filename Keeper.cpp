@@ -7,11 +7,6 @@ Keeper::Keeper()
     cout << "\nSYSTEM MESSAGE!\nKEEPER CONSTRUCTOR WAS CALLED!\n\n";
 };
 
-Keeper::Keeper(const Keeper &obj)
-{      
-    cout << "\nSYSTEM MESSAGE!\nENEMIES COPY CONSTRUCTOR WAS CALLED!\n\n";
-}
-
 Keeper::~Keeper()
 {
     cout << "\nSYSTEM MESSAGE!\nKEEPER DESTRUCTOR WAS CALLED!\n\n";
@@ -304,4 +299,39 @@ int Keeper::input_int(string prompt)
         if (!std::cin.fail()) break;
     }
     return value;
+}
+
+void Keeper::clear_file() {
+    std::ofstream in;
+    string path = "cargoes.txt";
+
+    cout << "Enter path to the file: "; cin >> path;
+    in.open(path, std::ofstream::out, std::ofstream::trunc);
+    while (!in.is_open()) {
+        cout << "Failed to open the file" << "\n";
+        cout << "Enter path to the file: "; cin >> path;
+        in.open(path, std::ofstream::out, std::ofstream::trunc);
+    }
+
+    in.close();
+}
+void Keeper::upload() {
+    std::fstream in;
+    string path = "cargoes.txt";
+
+    cout << "Enter path to the file: "; cin >> path;
+    in.open(path, std::ios::out);
+    while (!in.is_open()) {
+        cout << "Failed to open the file" << "\n";
+        cout << "Enter path to the file: "; cin >> path;
+        in.open(path, std::ios::in);
+    }
+
+    Node* temp = new Node;
+    temp = head;
+    while (temp != NULL) {
+        in << temp->heroes->describe() << "\n";
+        temp = temp->next;
+    }
+    in.close();
 }
