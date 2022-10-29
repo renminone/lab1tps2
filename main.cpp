@@ -4,7 +4,7 @@
 void show_menu();
 int input_int(string prompt);
 
-enum commands { ADD = 1, PRINT = 2, EDIT = 3, REMOVE = 4, EXIT = 0};
+enum commands { ADD = 1, PRINT = 2, EDIT = 3, REMOVE = 4, LOAD = 5, UPLOAD = 6, EXIT = 0};
 
 int main()
 {
@@ -69,6 +69,8 @@ int main()
                 std::cerr << e.what() << '\n';
             }
         }
+        else if (com == commands::LOAD) keeper.load();
+        else if (com == commands::UPLOAD) keeper.upload();
         else if (com == commands::EXIT) {
             is_quit = true;
             keeper.free();
@@ -79,7 +81,7 @@ int main()
 }
 
 void show_menu() {
-    cout << "1 - Добавить элемент.\n2 - Вывести.\n3 - Изменить.\n4 - Удалить.\n" << "0 - Выход.\n\n";
+    cout << "1 - Добавить элемент.\n2 - Вывести.\n3 - Изменить.\n4 - Удалить.\n5 - Загрузить из файла.\n6 - Загрузить в файл.\n" << "0 - Выход.\n\n";
 }
 
 int input_int(string prompt)
@@ -91,7 +93,7 @@ int input_int(string prompt)
         if (cin.fail()) {
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            cout << "You have entered wrong input" << std::endl;
+            cout << "Неверное значение!" << std::endl;
             cin >> value;
         }
         if (!std::cin.fail()) break;
