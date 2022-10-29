@@ -7,6 +7,11 @@ Keeper::Keeper()
     cout << "\nSYSTEM MESSAGE!\nKEEPER CONSTRUCTOR WAS CALLED!\n\n";
 };
 
+Keeper::Keeper(const Keeper &obj)
+{      
+    cout << "\nSYSTEM MESSAGE!\nENEMIES COPY CONSTRUCTOR WAS CALLED!\n\n";
+}
+
 Keeper::~Keeper()
 {
     cout << "\nSYSTEM MESSAGE!\nKEEPER DESTRUCTOR WAS CALLED!\n\n";
