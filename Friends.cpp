@@ -14,7 +14,12 @@ Friends::Friends(string name, string weapon, string xp)
 	this->weapon = weapon;
 	this->xp = xp;
 	cout << "\nSYSTEM MESSAGE!\nFRIENDS CONSTRUCTOR WAS CALLED!\n\n";
-};
+}
+
+Friends::Friends(const Friends &obj)
+{      
+    cout << "\nSYSTEM MESSAGE!\nFRIENDS COPY CONSTRUCTOR WAS CALLED!\n\n";
+}
 
 Friends::~Friends()
 {
