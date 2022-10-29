@@ -9,6 +9,7 @@ private:
 public:
 	Monsters();
 	Monsters(string name, string desc);
+	Monsters(const Monsters &obj);
 	~Monsters();
 
 	void set_name(string name);
