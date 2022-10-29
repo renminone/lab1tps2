@@ -15,6 +15,11 @@ Monsters::Monsters(string name, string desc)
 	cout << "\nSYSTEM MESSAGE!\nMONSTERS CONSTRUCTOR WAS CALLED!\n\n";
 };
 
+Monsters::Monsters(const Monsters &obj)
+{      
+    cout << "\nSYSTEM MESSAGE!\nMONSTERS COPY CONSTRUCTOR WAS CALLED!\n\n";
+}
+
 Monsters::~Monsters()
 {
 	cout << "\nSYSTEM MESSAGE!\nMONSTERS DESTRUCTOR WAS CALLED!\n\n";
