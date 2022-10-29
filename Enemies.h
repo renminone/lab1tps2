@@ -10,6 +10,7 @@ private:
 public:
 	Enemies();
 	Enemies(string name, string weapon, string crime, string home, string xp);
+	Enemies(const Enemies &obj);
 	~Enemies();
 
 	void set_name(string name);
