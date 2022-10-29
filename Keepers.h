@@ -24,7 +24,6 @@ class Keeper
 	int n;
 public:
 	Keeper();
-	Keeper(const Keeper &obj);
 	~Keeper();
 	void add(Heroes* new_hero);
 	void print();
@@ -32,6 +31,7 @@ public:
 	void upload();
 	void load();
 	void free();
+	void clear_file();
 	void edit(int num);
 	Heroes* get(int num);
 	int get_count_arguments(string str, string delimiter);
