@@ -34,6 +34,7 @@ string Friends::describe()
 {
 	std::stringstream ss;
 	ss << "Имя: " << name << endl << "Оружие: " << weapon << endl << "Навыки: " << xp << endl;
+	ss << "Тип - герой." << endl;
 	return ss.str();
 }
 
