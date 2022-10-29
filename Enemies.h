@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include "Heroes.h"
 
 class Enemies : public Heroes
