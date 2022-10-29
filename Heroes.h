@@ -19,6 +19,7 @@ public:
         MONSTERS
     };
     Heroes();
+    Heroes(const Heroes &obj);
     ~Heroes();
 
     virtual HeroesTypes get_type() = 0;
