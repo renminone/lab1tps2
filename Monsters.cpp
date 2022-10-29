@@ -30,6 +30,7 @@ string Monsters::describe()
 {
 	std::stringstream ss;
 	ss << "Имя: " << name << endl << "Описание: " << desc << endl;
+	ss << "Тип - монстр." << endl;
 	return ss.str();
 }
 
