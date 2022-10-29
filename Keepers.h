@@ -24,6 +24,7 @@ class Keeper
 	int n;
 public:
 	Keeper();
+	Keeper(const Keeper &obj);
 	~Keeper();
 	void add(Heroes* new_hero);
 	void print();
