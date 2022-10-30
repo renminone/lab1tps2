@@ -14,12 +14,7 @@ Friends::Friends(string name, string weapon, string xp)
 	this->weapon = weapon;
 	this->xp = xp;
 	cout << "\nSYSTEM MESSAGE!\nFRIENDS CONSTRUCTOR WAS CALLED!\n\n";
-}
-
-Friends::Friends(const Friends &obj)
-{      
-    cout << "\nSYSTEM MESSAGE!\nFRIENDS COPY CONSTRUCTOR WAS CALLED!\n\n";
-}
+};
 
 Friends::~Friends()
 {
@@ -38,8 +33,7 @@ string Friends::get_xp() { return xp; }
 string Friends::describe()
 {
 	std::stringstream ss;
-	ss << "Имя: " << name << endl << "Оружие: " << weapon << endl << "Навыки: " << xp << endl;
-	ss << "Тип - герой." << endl;
+	ss << "Friends, " << name << ", " << weapon << ", " << xp;
 	return ss.str();
 }
 
