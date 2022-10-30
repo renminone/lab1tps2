@@ -18,11 +18,6 @@ Enemies::Enemies(string name, string weapon, string crime, string home, string x
 	cout << "\nSYSTEM MESSAGE!\nENEMIES CONSTRUCTOR WAS CALLED!\n\n";
 }
 
-Enemies::Enemies(const Enemies &obj)
-{      
-    cout << "\nSYSTEM MESSAGE!\nENEMIES COPY CONSTRUCTOR WAS CALLED!\n\n";
-}
-
 Enemies::~Enemies()
 {
 	cout << "\nSYSTEM MESSAGE!\nENEMIES DESTRUCTOR WAS CALLED!\n\n";
@@ -43,10 +38,10 @@ string Enemies::get_home() { return home; }
 void Enemies::set_xp(string xp) { this->xp = xp; }
 string Enemies::get_xp() { return xp; }
 
-string Enemies::describe() {
+string Enemies::describe()
+{
 	std::stringstream ss;
-	ss << "Имя: " << name << endl << "Оружие: " << weapon << endl << "Преступление: " << crime << endl << "Локация: " << home << endl << "Преступление: " << xp << endl;
-	ss << "Тип - злодей." << endl;
+	ss << "Enemies, " << name << ", " << weapon << ", " << crime << ", " << home << ", " << xp;
 	return ss.str();
 }
 
