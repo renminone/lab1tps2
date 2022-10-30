@@ -4,7 +4,7 @@
 void show_menu();
 int input_int(string prompt);
 
-enum commands { ADD = 1, PRINT = 2, EDIT = 3, REMOVE = 4, LOAD = 5, UPLOAD = 6, EXIT = 0};
+enum commands { ADD = 1, PRINT = 2, EDIT = 3, REMOVE = 4, LOAD = 5, UPLOAD = 6, CLEAR = 7, EXIT = 0};
 
 int main()
 {
@@ -14,7 +14,8 @@ int main()
     int com, num, num2;
     string str;
     show_menu();
-    while (!is_quit) {
+    while (!is_quit)
+    {
         com = input_int("\nВыберите команду: ");
         system("cls");
         show_menu();
@@ -71,6 +72,7 @@ int main()
         }
         else if (com == commands::LOAD) keeper.load();
         else if (com == commands::UPLOAD) keeper.upload();
+        else if (com == commands::CLEAR) keeper.clear_file();
         else if (com == commands::EXIT) {
             is_quit = true;
             keeper.free();
@@ -81,7 +83,7 @@ int main()
 }
 
 void show_menu() {
-    cout << "1 - Добавить элемент.\n2 - Вывести.\n3 - Изменить.\n4 - Удалить.\n5 - Загрузить из файла.\n6 - Загрузить в файл.\n" << "0 - Выход.\n\n";
+    cout << "1 - Добавить элемент.\n2 - Вывести.\n3 - Изменить.\n4 - Удалить.\n5 - Загрузить из файла.\n6 - Загрузить в файл.\n7 - Очистка файла\n0 - Выход.\n\n";
 }
 
 int input_int(string prompt)
