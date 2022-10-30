@@ -15,11 +15,6 @@ Monsters::Monsters(string name, string desc)
 	cout << "\nSYSTEM MESSAGE!\nMONSTERS CONSTRUCTOR WAS CALLED!\n\n";
 };
 
-Monsters::Monsters(const Monsters &obj)
-{      
-    cout << "\nSYSTEM MESSAGE!\nMONSTERS COPY CONSTRUCTOR WAS CALLED!\n\n";
-}
-
 Monsters::~Monsters()
 {
 	cout << "\nSYSTEM MESSAGE!\nMONSTERS DESTRUCTOR WAS CALLED!\n\n";
@@ -34,8 +29,7 @@ string Monsters::get_desc() { return desc; }
 string Monsters::describe()
 {
 	std::stringstream ss;
-	ss << "Имя: " << name << endl << "Описание: " << desc << endl;
-	ss << "Тип - монстр." << endl;
+	ss << "Monsters, " << name << ", " << desc;
 	return ss.str();
 }
 
