@@ -149,12 +149,13 @@ bool Keeper::is_int(string str) {
     return false;
 }
 
-void Keeper::load() {
+void Keeper::load()
+{
     string line, type;
     string* s;
-    string* cities;
+    string* creatures;
     std::fstream in;
-    string path = "cargoes.txt";
+    string path = "heroes.txt";
     int count_arg;
 
     cout << "Enter path to the file: "; cin >> path;
@@ -165,14 +166,17 @@ void Keeper::load() {
         in.open(path, std::ios::in);
     }
 
-    while (std::getline(in, line)) {
+    while (std::getline(in, line))
+    {
         count_arg = get_count_arguments(line, ", ");
         s = split(line, ", ", count_arg);
         type = s[0];
         Heroes* heroes;
-        if (type == "Friends") {
-            if (count_arg != 6 || !(is_int(s[2]) && is_int(s[4]) && is_int(s[5]))) continue;
-            try {
+        if (type == "Friends")
+        {
+            if (count_arg != 5 || !(is_int(s[2]) && is_int(s[3]) && is_int(s[4]))) continue;
+            try
+            {
                 heroes = (Heroes*)(new Friends(s[1], s[2], s[3]));
                 add(heroes);
             }
@@ -182,7 +186,7 @@ void Keeper::load() {
             }
         }
         else if (type == "Enemies") {
-            if (count_arg != 7 || !(is_int(s[3]) && is_int(s[4]) && is_int(s[5]))) continue;
+            if (count_arg != 6 || !(is_int(s[2]) && is_int(s[3]) && is_int(s[4]) && is_int(s[5]) && is_int(s[6]))) continue;
             try
             {
                 heroes = (Heroes*)(new Enemies(s[1], s[2], s[3], s[4], s[5]));
@@ -194,7 +198,7 @@ void Keeper::load() {
             }
         }
         else if (type == "Monsters") {
-            if (count_arg != 6 || !(is_int(s[1]) && is_int(s[4]))) continue;
+            if (count_arg != 4 || !(is_int(s[2]) && is_int(s[3]))) continue;
             try {
                 heroes = (Heroes*)(new Monsters(s[1], s[2]));
                 add(heroes);
@@ -208,7 +212,8 @@ void Keeper::load() {
     in.close();
 }
 
-void Keeper::edit(int num) {
+void Keeper::edit(int num)
+{
     int property_int;
     string property_str;
     Heroes::HeroesTypes type;
@@ -237,7 +242,8 @@ void Keeper::edit(int num) {
             friends->set_xp(property_str);
         }
     }
-    else if (type == Heroes::ENEMIES) {
+    else if (type == Heroes::ENEMIES)
+    {
         Enemies* enemies = (Enemies*)this->get(num);
         num = input_int("Выберите данные (1 - Имя, 2 - Оружие, 3 - Преступление, 4 - Локация, 5 - Навыки): ");
 
@@ -301,27 +307,30 @@ int Keeper::input_int(string prompt)
     return value;
 }
 
-void Keeper::clear_file() {
+void Keeper::clear_file()
+{
     std::ofstream in;
     string path = "cargoes.txt";
 
     cout << "Enter path to the file: "; cin >> path;
     in.open(path, std::ofstream::out, std::ofstream::trunc);
-    while (!in.is_open()) {
+    while (!in.is_open())
+    {
         cout << "Failed to open the file" << "\n";
         cout << "Enter path to the file: "; cin >> path;
         in.open(path, std::ofstream::out, std::ofstream::trunc);
     }
-
     in.close();
 }
-void Keeper::upload() {
+void Keeper::upload()
+{
     std::fstream in;
-    string path = "cargoes.txt";
+    string path = "heroes.txt";
 
     cout << "Enter path to the file: "; cin >> path;
     in.open(path, std::ios::out);
-    while (!in.is_open()) {
+    while (!in.is_open())
+    {
         cout << "Failed to open the file" << "\n";
         cout << "Enter path to the file: "; cin >> path;
         in.open(path, std::ios::in);
@@ -329,7 +338,8 @@ void Keeper::upload() {
 
     Node* temp = new Node;
     temp = head;
-    while (temp != NULL) {
+    while (temp != NULL)
+    {
         in << temp->heroes->describe() << "\n";
         temp = temp->next;
     }
